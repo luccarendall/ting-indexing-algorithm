@@ -7,8 +7,8 @@ def txt_importer(path_file):
         try:
             with open(path_file, 'r') as file:
                 file_data = file.read()
-                return file_data.split('')
+                return file_data.split('\n')
         except FileNotFoundError:
-            return f"Arquivo {path_file} não encontrado", file
+            print(f"Arquivo {path_file} não encontrado", file=sys.stderr)
     else:
         sys.stderr.write('Formato inválido')
