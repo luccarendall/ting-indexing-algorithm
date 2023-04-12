@@ -18,4 +18,6 @@ class Queue(AbstractQueue):
         return self.fila.pop(0)
 
     def search(self, index):
-        """Aqui irá sua implementação"""
+        if index < 0 or index >= len(self.fila):
+            raise IndexError("Índice Inválido ou Inexistente")
+        return self.fila[index]
